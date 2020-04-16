@@ -1,7 +1,6 @@
 # Ben Lizza
 # 04/61/20
 
-class Search_Methods:
     def bubble_sort(self, arr):
         def swap(i, j):
             arr[i], arr[j] = arr[j], arr[i]
