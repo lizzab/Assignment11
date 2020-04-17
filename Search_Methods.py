@@ -1,5 +1,6 @@
 # Ben Lizza
-# 04/61/20
+# 04/16/20
+
 
 def bubble_sort(arr):
     def swap(i, j):
@@ -19,6 +20,7 @@ def bubble_sort(arr):
 
     return arr
 
+
 def selection_sort(arr):
     for i in range(len(arr)):
         minimum = i
@@ -30,6 +32,7 @@ def selection_sort(arr):
         arr[minimum], arr[i] = arr[i], arr[minimum]
 
     return arr
+
 
 def insertion_sort(arr):
     for i in range(len(arr)):
@@ -44,6 +47,7 @@ def insertion_sort(arr):
 
     return arr
 
+
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -51,6 +55,7 @@ def merge_sort(arr):
     left, right = merge_sort(arr[:mid]), merge_sort(arr[:mid])
 
     return merge(left, right, arr.copy())
+
 
 def merge(left, right, merged):
     left_cursor, right_cursor = 0, 0
@@ -67,7 +72,10 @@ def merge(left, right, merged):
         merged[left_cursor + right_cursor] = right[right_cursor]
 
     return merged
+
 # QUICK SORT
+
+
 def partition(array, begin, end):
     pivot_idx = begin
     for i in range(begin + 1, end + 1):
@@ -77,12 +85,14 @@ def partition(array, begin, end):
     array[pivot_idx], array[begin] = array[begin], array[pivot_idx]
     return pivot_idx
 
+
 def quick_sort_recursion(array, begin, end):
     if begin >= end:
         return
     pivot_idx = partition(array, begin, end)
     quick_sort_recursion(array, begin, pivot_idx-1)
     quick_sort_recursion(array, pivot_idx+1, end)
+
 
 def quick_sort(array, begin=0, end=None):
     if end is None:
